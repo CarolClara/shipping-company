@@ -11,8 +11,3 @@ class MerchandiseViewSet(viewsets.ModelViewSet):
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = models.Order.objects.all()
     serializer_class = serializers.OrderSerializer
-
-
-class BudgetViewSet(viewsets.ModelViewSet):
-    queryset = models.Budget.objects.all()
-    serializer_class = serializers.BudgetSerializer
