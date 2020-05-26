@@ -1,6 +1,6 @@
 from django.db import models
 
-from register.models import Place
+from register.models import Address, User
 
 
 class Merchandise(models.Model):
@@ -11,11 +11,7 @@ class Merchandise(models.Model):
 
 
 class Order(models.Model):
-    origin = Place()
-    destiny = Place()
-    merchandise = Merchandise()
-
-
-class Budget(models.Model):
-    order = Order()
-    price = models.DecimalField(decimal_places=2, max_digits=20)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    origin = models.ForeignKey(Address, on_delete=models.PROTECT, related_name='order_origin')
+    destiny = models.ForeignKey(Address, on_delete=models.PROTECT, related_name='order_destiny')
+    merchandises = models.ManyToManyField(Merchandise)

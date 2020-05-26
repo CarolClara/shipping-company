@@ -1,8 +1,8 @@
 from django.db import models
 
 
-class Place(models.Model):
-    address = models.CharField(max_length=255)
+class Address(models.Model):
+    street = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
@@ -10,9 +10,8 @@ class Place(models.Model):
 
 
 class User(models.Model):
-
     name = models.CharField(max_length=255)
     email = models.EmailField()
     cnpj = models.CharField(max_length=255)
     password = models.CharField(max_length=50)
-    address = Place()
+    address = models.ForeignKey(Address, on_delete=models.PROTECT)
