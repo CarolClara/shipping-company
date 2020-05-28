@@ -1,10 +1,19 @@
 from rest_framework import serializers
 
-from register.models import User
+from register import models
+
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Address
+        fields = '__all__'
 
 
 class UserSerializer(serializers.ModelSerializer):
-
     class Meta:
-        model = User
-        fields = ('name', 'email')
+        model = models.User
+        fields = '__all__'
+
+    def to_representation(self, instance):
+        self.fields['address'] = AddressSerializer(read_only=True)
+        return super(UserSerializer, self).to_representation(instance)
