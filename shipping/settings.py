@@ -58,7 +58,7 @@ WSGI_APPLICATION = 'shipping.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gotta-go-fast',
+        'NAME': 'carolclara$gotta-go-fast',
         'USER': 'carolclara',
         'PASSWORD': '_GottaGoFast_456'
     }
