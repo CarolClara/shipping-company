@@ -11,7 +11,7 @@ from register import models as r_models
 
 class PackageViewSet(viewsets.ModelViewSet):
     queryset = o_models.Package.objects.all()
-    serializer_class = serializers.MerchandiseSerializer
+    serializer_class = serializers.PackageSerializer
 
 
 class OrderViewSet(viewsets.ModelViewSet):
