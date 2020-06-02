@@ -17,3 +17,9 @@ class UserSerializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         self.fields['address'] = AddressSerializer(read_only=True)
         return super(UserSerializer, self).to_representation(instance)
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Product
+        fields = '__all__'
