@@ -6,7 +6,7 @@ SECRET_KEY = '&=6c2@_1vc!^8u6&wb%gv+c!@q@pmv*8jvdhphzw^k_rc^5$26'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://carolclara.pythonanywhere.com']
+ALLOWED_HOSTS = ['carolclara.pythonanywhere.com']
 
 
 # Application definition
