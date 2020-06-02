@@ -6,7 +6,7 @@ SECRET_KEY = '&=6c2@_1vc!^8u6&wb%gv+c!@q@pmv*8jvdhphzw^k_rc^5$26'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['carolclara.pythonanywhere.com']
+ALLOWED_HOSTS = ['carolclara.pythonanywhere.com', 'localhost']
 
 
 # Application definition
@@ -57,10 +57,8 @@ WSGI_APPLICATION = 'shipping.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'carolclara$gotta-go-fast',
-        'USER': 'carolclara',
-        'PASSWORD': '_GottaGoFast_456'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
